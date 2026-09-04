@@ -999,7 +999,7 @@
 
 // // Change this only if your backend uses another URL.
 // const API_BASE_URL =
-//   import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+//   import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 // const getToken = () => {
 //   return (
@@ -2358,7 +2358,7 @@ import Sidebar from "../components/dashboard/Sidebar";
 
 // Change this only if your backend uses another URL.
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 const getToken = () => {
   return (
