@@ -1340,7 +1340,8 @@
 import { useEffect, useState } from "react";
 import Sidebar from "../components/dashboard/Sidebar";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 function getAuthHeaders() {
   const token =
