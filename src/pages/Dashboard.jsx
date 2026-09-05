@@ -1,216 +1,5 @@
 
 
-// import Sidebar from "../components/dashboard/Sidebar";
-// import StatCard from "../components/dashboard/StatCard";
-// import FollowUps from "../components/dashboard/FollowUps";
-// import DemoSchedule from "../components/dashboard/DemoSchedule";
-// import RecentLeads from "../components/dashboard/RecentLeads";
-// import SalesTrend from "../components/dashboard/SalesTrend";
-
-// const stats = [
-//   {
-//     title: "TOTAL LEADS",
-//     value: "1,240",
-//     change: "+12.5%",
-//     icon: "users",
-//     color: "purple",
-//   },
-//   {
-//     title: "FOLLOW-UPS",
-//     subtitle: "TODAY",
-//     value: "18",
-//     icon: "calendar",
-//     color: "orange",
-//   },
-//   {
-//     title: "INTERESTED",
-//     subtitle: "CLIENTS",
-//     value: "45",
-//     icon: "heart",
-//     color: "purple",
-//   },
-//   {
-//     title: "ORDERS",
-//     value: "89",
-//     icon: "cart",
-//     color: "blue",
-//   },
-//   {
-//     title: "PRODUCTION",
-//     subtitle: "PENDING",
-//     value: "12",
-//     icon: "package",
-//     color: "yellow",
-//   },
-//   {
-//     title: "ORDERS",
-//     subtitle: "DELIVERED",
-//     value: "65",
-//     icon: "truck",
-//     color: "green",
-//   },
-//   {
-//     title: "PENDING",
-//     subtitle: "PAYMENTS",
-//     value: "₹4,200",
-//     icon: "wallet",
-//     color: "red",
-//   },
-// ];
-
-// function SearchIcon() {
-//   return (
-//     <svg
-//       viewBox="0 0 24 24"
-//       fill="none"
-//       stroke="currentColor"
-//       strokeWidth="1.8"
-//       className="h-4 w-4"
-//     >
-//       <circle cx="11" cy="11" r="6.5" />
-//       <path d="m16 16 4 4" />
-//     </svg>
-//   );
-// }
-
-// function BellIcon() {
-//   return (
-//     <svg
-//       viewBox="0 0 24 24"
-//       fill="none"
-//       stroke="currentColor"
-//       strokeWidth="1.7"
-//       className="h-5 w-5"
-//     >
-//       <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
-//       <path d="M10 21h4" />
-//     </svg>
-//   );
-// }
-
-// function Dashboard({ onNavigate }) {
-//   return (
-//     <div className="min-h-screen w-full bg-[#faf8ff] text-[#20202b]">
-//       <div className="flex min-h-screen w-full">
-//         <Sidebar onNavigate={onNavigate} />
-
-//         <main className="min-w-0 flex-1">
-//           {/* Header */}
-//           <header className="flex h-[70px] items-center justify-between border-b border-[#eeeaf5] bg-white px-6 lg:px-8">
-//             <div className="relative w-full max-w-[520px]">
-//               <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#8c8797]">
-//                 <SearchIcon />
-//               </div>
-
-//               <input
-//                 type="text"
-//                 placeholder="Search..."
-//                 className="h-10 w-full rounded-lg border border-[#e5e1ec] bg-[#fcfbff] pl-10 pr-4 text-sm text-gray-700 outline-none transition placeholder:text-[#aaa5b2] focus:border-[#6554e8] focus:ring-2 focus:ring-[#6554e8]/10"
-//               />
-//             </div>
-
-//             <div className="ml-6 flex items-center gap-5">
-//               <button className="relative text-[#777384] transition hover:text-[#5141d8]">
-//                 <BellIcon />
-//                 <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-red-500" />
-//               </button>
-
-//               <button className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purple-400 to-indigo-500 text-sm font-semibold text-white shadow-sm">
-//                 P
-//               </button>
-//             </div>
-//           </header>
-
-//           {/* Main Content */}
-//           <div className="w-full p-6 sm:p-8 lg:p-10">
-//             {/* Heading */}
-//             <div className="animate-[fadeIn_.5s_ease-out]">
-//               <h1 className="text-[28px] font-bold tracking-[-0.7px] text-[#171720]">
-//                 Dashboard
-//               </h1>
-
-//               <p className="mt-1 text-sm text-[#94909d]">
-//                 Overview of sales, orders and operations.
-//               </p>
-//             </div>
-
-//             {/* Statistics */}
-//             <div className="mt-7 grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
-//               {stats.map((stat, index) => (
-//                 <div
-//                   key={stat.title + index}
-//                   className="animate-[slideUp_.45s_ease-out_both]"
-//                   style={{ animationDelay: `${index * 70}ms` }}
-//                 >
-//                   <StatCard {...stat} />
-//                 </div>
-//               ))}
-
-//               {/* Upcoming Demos */}
-//               <div
-//                 className="animate-[slideUp_.45s_ease-out_both]"
-//                 style={{ animationDelay: "490ms" }}
-//               >
-//                 <StatCard
-//                   title="UPCOMING DEMOS"
-//                   value="7"
-//                   icon="bolt"
-//                   color="orange"
-//                 />
-//               </div>
-//             </div>
-
-//             {/* Bottom Dashboard */}
-//             <div className="mt-6 grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_340px] 2xl:grid-cols-[minmax(0,1fr)_380px]">
-//               {/* Left Section */}
-//               <div className="min-w-0 space-y-5">
-//                 <FollowUps />
-//                 <DemoSchedule />
-//                 <RecentLeads />
-//               </div>
-
-//               {/* Right Section */}
-//               <div className="min-w-0">
-//                 <SalesTrend />
-//               </div>
-//             </div>
-//           </div>
-//         </main>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Dashboard;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import { useEffect, useState } from "react";
 
 // import Sidebar from "../components/dashboard/Sidebar";
@@ -1323,74 +1112,77 @@ function Dashboard({ onNavigate }) {
        Stats
     ========================= */
 
-    const stats = [
-        {
-            title: "TOTAL LEADS",
-            value: loading
-                ? "..."
-                : dashboardData.totalLeads.toLocaleString(
-                      "en-IN"
-                  ),
-            change: "",
-            icon: "users",
-            color: "purple",
-        },
-        {
-            title: "FOLLOW-UPS",
-            subtitle: "TODAY",
-            value: loading
-                ? "..."
-                : dashboardData.followUpsToday,
-            icon: "calendar",
-            color: "orange",
-        },
-        {
-            title: "INTERESTED",
-            subtitle: "CLIENTS",
-            value: loading
-                ? "..."
-                : dashboardData.interestedClients,
-            icon: "heart",
-            color: "purple",
-        },
-        {
-            title: "ORDERS",
-            value: loading
-                ? "..."
-                : dashboardData.totalOrders,
-            icon: "cart",
-            color: "blue",
-        },
-        {
-            title: "PRODUCTION",
-            subtitle: "PENDING",
-            value: loading
-                ? "..."
-                : dashboardData.pendingProduction,
-            icon: "package",
-            color: "yellow",
-        },
-        {
-            title: "ORDERS",
-            subtitle: "DELIVERED",
-            value: loading
-                ? "..."
-                : dashboardData.deliveredOrders,
-            icon: "truck",
-            color: "green",
-        },
-        {
-            title: "PENDING",
-            subtitle: "PAYMENTS",
-            value: loading
-                ? "..."
-                : `₹${dashboardData.pendingPayments.toLocaleString(
-                      "en-IN"
-                  )}`,
-            icon: "wallet",
-            color: "red",
-        },
-    ];
+  const stats = [
+    {
+        title: "TOTAL LEADS",
+        value: loading
+            ? "..."
+            : dashboardData.totalLeads.toLocaleString("en-IN"),
+        change: "",
+        icon: "users",
+        color: "purple",
+        path: "/leads",
+    },
+    {
+        title: "FOLLOW-UPS",
+        subtitle: "TODAY",
+        value: loading
+            ? "..."
+            : dashboardData.followUpsToday,
+        icon: "calendar",
+        color: "orange",
+        path: "/follow-ups",
+    },
+    {
+        title: "INTERESTED",
+        subtitle: "CLIENTS",
+        value: loading
+            ? "..."
+            : dashboardData.interestedClients,
+        icon: "heart",
+        color: "purple",
+        path: "/leads?status=Interested",
+    },
+    {
+        title: "ORDERS",
+        value: loading
+            ? "..."
+            : dashboardData.totalOrders,
+        icon: "cart",
+        color: "blue",
+        path: "/orders",
+    },
+    {
+        title: "PRODUCTION",
+        subtitle: "COMPLETED",
+        value: loading
+            ? "..."
+            : dashboardData.pendingProduction,
+        icon: "package",
+        color: "yellow",
+        path: "/production",
+    },
+    {
+        title: "ORDERS",
+        subtitle: "DELIVERED",
+        value: loading
+            ? "..."
+            : dashboardData.deliveredOrders,
+        icon: "truck",
+        color: "green",
+        path: "/delivery",
+    },
+    {
+        title: "PENDING",
+        subtitle: "PAYMENTS",
+        value: loading
+            ? "..."
+            : `₹${dashboardData.pendingPayments.toLocaleString("en-IN")}`,
+        icon: "wallet",
+        color: "red",
+        path: "/payments",
+    },
+];
 
     /* =========================
        Search
@@ -1591,7 +1383,9 @@ function Dashboard({ onNavigate }) {
                                             stat.title +
                                             index
                                         }
-                                        className="animate-[slideUp_.45s_ease-out_both]"
+                                        // className="animate-[slideUp_.45s_ease-out_both]"
+                                        onClick={() => onNavigate(stat.path)}
+className="cursor-pointer animate-[slideUp_.45s_ease-out_both]"
                                         style={{
                                             animationDelay: `${
                                                 index *
@@ -1610,27 +1404,24 @@ function Dashboard({ onNavigate }) {
 
                             {/* Upcoming Demos */}
 
-                            <div
-                                className="animate-[slideUp_.45s_ease-out_both]"
-                                style={{
-                                    animationDelay:
-                                        "490ms",
-                                }}
-                            >
-
-                                <StatCard
-                                    title="UPCOMING DEMOS"
-                                    value={
-                                        loading
-                                            ? "..."
-                                            : dashboardData.upcomingDemos
-                                    }
-                                    icon="bolt"
-                                    color="orange"
-                                />
-
-                            </div>
-
+                          <div
+    className="cursor-pointer animate-[slideUp_.45s_ease-out_both]"
+    style={{
+        animationDelay: "490ms",
+    }}
+    onClick={() => onNavigate("/demos")}
+>
+    <StatCard
+        title="UPCOMING DEMOS"
+        value={
+            loading
+                ? "..."
+                : dashboardData.upcomingDemos
+        }
+        icon="bolt"
+        color="orange"
+    />
+</div>
                         </div>
 
                         {/* =========================
