@@ -2049,7 +2049,8 @@ function FollowUps({ onNavigate }) {
               <button
                 type="button"
                 onClick={() => {
-                  setActiveStatus("Pending");
+                  setActiveStatus("All");
+    setActiveDateFilter("Today");
                   setSearch("");
                 }}
                 className="group rounded-xl border border-[#e5e1ed] bg-white p-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-md"

@@ -704,14 +704,17 @@ const isToday = (date) => {
         return false;
     }
 
-    const today = new Date();
     const itemDate = new Date(date);
 
-    return (
-        itemDate.getDate() === today.getDate() &&
-        itemDate.getMonth() === today.getMonth() &&
-        itemDate.getFullYear() === today.getFullYear()
-    );
+    const todayIST = new Date().toLocaleDateString("en-CA", {
+        timeZone: "Asia/Kolkata",
+    });
+
+    const itemDateIST = itemDate.toLocaleDateString("en-CA", {
+        timeZone: "Asia/Kolkata",
+    });
+
+    return itemDateIST === todayIST;
 };
 
 const isUpcoming = (date) => {
@@ -851,17 +854,26 @@ function Dashboard({ onNavigate }) {
                    TODAY'S FOLLOW-UPS
                 ========================= */
 
-                const todayFollowUps =
-                    followUps.filter((item) => {
-                        const date =
-                            item.followUpDate ||
-                            item.followupDate ||
-                            item.date ||
-                            item.scheduledAt ||
-                            item.nextFollowUpDate;
+                const todayFollowUps = followUps.filter((item) => {
+    const date =
+        item.scheduledDate ||
+        item.followUpDate ||
+        item.followupDate ||
+        item.date ||
+        item.scheduledAt ||
+        item.nextFollowUpDate;
 
-                        return isToday(date);
-                    });
+    const status = String(
+        item.status || ""
+    )
+        .trim()
+        .toLowerCase();
+
+    return (
+        isToday(date) &&
+        status === "pending"
+    );
+});
 
                 /* =========================
                    UPCOMING DEMOS
